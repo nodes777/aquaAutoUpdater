@@ -11,9 +11,9 @@ module.exports = function () {
 	var firebaseMonthAndYear = firebaseMonth + dateArray.slice(3,4);
 	var firebaseMonthDashYear = firebaseMonth +"-" +dateArray.slice(3,4);
 
-	var firebaseMonthPath = firebaseMonthAndYear.toString();
+	var firebaseMonthPath = firebaseMonthDashYear.toString();
 
 	var dateString = `${firebaseMonthPath}-${dayScrapedUrl}`;
-	//onsole.log(dateString);
+	console.log(dateString);
 	return dateString;
 };
