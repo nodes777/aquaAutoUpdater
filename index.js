@@ -35,19 +35,17 @@ var statsPromise = salesStatsRef.once("value").then(function(snapshot) { // Look
         // Reconsile todays sales with players portfolio
         player.stats[today] = getUpdatedStats(player.portfolio, todaysSalesStats);
 
-        //Record the day's agg stats
-        //player.stats[today] = player.portfolio.aggStats;
 
         // Add timestamp
-        // var timestamp = Date.now();
-        // player.stats[today].timestamp = timestamp;
-        // //console.log(player.stats[today])
+        var timestamp = Date.now();
+        player.stats[today].timestamp = timestamp;
+        console.log(player.stats[today])
 
-        // // Save in a set method
-        // var promise = db.ref(`users/${user}/stats/${today}`).set(player.stats[today])
-        //               .then(function(){console.log(`Finished setting ${player.username}`)});
-        // // Push the promise
-        // promises.push(promise);
+        // Save in a set method
+        var promise = db.ref(`users/${user}/stats/${today}`).set(player.stats[today])
+                      .then(function(){console.log(`Finished setting ${player.username}`)});
+        // Push the promise
+        promises.push(promise);
       }
 
       // When all promises have resolved, exit node
