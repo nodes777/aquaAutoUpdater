@@ -26,6 +26,7 @@ module.exports = function (playerPortfolio, todaysSales) {
     stats.value = runningTotalOfValue;
     stats.avg = (runningTotalOfValue/runningTotalOfShares).toFixed(2);
     stats.shares = runningTotalOfShares;
+    stats.cash = playerPortfolio.cash;
 	
 	return stats;
 };
