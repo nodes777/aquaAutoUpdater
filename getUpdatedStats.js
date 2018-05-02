@@ -23,7 +23,7 @@ module.exports = function (playerPortfolio, todaysSales) {
     }
 
     // Update aggregate stats
-    stats.value = runningTotalOfValue;
+    stats.value = runningTotalOfValue + playerPortfolio.cash;
     stats.avg = (runningTotalOfValue/runningTotalOfShares).toFixed(2);
     stats.shares = runningTotalOfShares;
     stats.cash = playerPortfolio.cash;
